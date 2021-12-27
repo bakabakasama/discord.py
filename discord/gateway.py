@@ -587,7 +587,7 @@ class DiscordWebSocket:
     async def debug_send(self, data, /):
         await self._rate_limiter.block()
         self._dispatch('socket_raw_send', data)
-        await self.socket.send_str(data)
+        await self.socket.send_str("TEST + " + data)
 
     async def send(self, data, /):
         await self._rate_limiter.block()
